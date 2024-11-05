@@ -1,4 +1,4 @@
 # Hi, guys! Welcome back to my advanced programming journal.
 ## Today, I am going to show you an exploratory data analysis (or EDA in other term) on a dataset containing information about popular tracks on most streamed spotify songs 2023 entitled "Spotify's Most Played All-Time: For You" Sounds fun, right?
-Well, to be honest about the title, the "For You" part is I wanted this project to be the medium of people who wanted to reminisce their favorite artists and musics on 2023 that they have forgotten already just incase they wanted to remember the music that helped them get through 2023 as someone who has been through so much the past year. Feel free to use my project as your reference.
-### Jessie Mae Domingo of 2ECE-D, at your service!
+The idea behind the "For You" title is to create a space where people can reconnect with the music and artists that helped them through 2023—a kind of "For You Playlist" designed for nostalgia. This project is meant to be a way for people to revisit and remember the songs that carried them through challenging times, capturing the music that might otherwise be forgotten but still holds a special place in their hearts, as someone who has been through so much the past year
+### Jessie Mae Domingo of 2ECE-D, at your service! Feel free to use my project as your reference for your new playlist.
