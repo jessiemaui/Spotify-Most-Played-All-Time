@@ -34,53 +34,113 @@ I began this exploratory project on November 4, 2024, and decided to document ev
 
 ##### :triangular_flag_on_post: Error 1: Overview of Dataset 
 Errors and Realization.ipynb; Cell #2. 
-###### import pandas as pd 
-###### spotify = pd.read_csv('spotify-2023.csv')
-###### spotify['track_name']
+
+    import pandas as pd 
+          
+    spotify = pd.read_csv('spotify-2023.csv')
+          
+    spotify['track_name']
+      
 ###### Even though I uploaded the csv already on the same location of my errors ipynb, I could not call any track name in the spotify-2023.csv file. 
 
 ### :round_pushpin: Date Continued: November 05, 2024 :mantelpiece_clock: 10:45 PM
-#### After hours of letting procrastination take over, I finally decided it was time to get back to work. I researched the issue and found that encoding='utf-8' couldn’t decode certain special characters in the file. These characters aren't compatible with the default encoding used to read the file, causing the error. To solve this problem, the latin-1 is used because continuation byte is invalid. As a result of this, I came up with the successful code:
+#### After hours of letting procrastination take over, I finally decided it was time to get back to work. I researched the issue and found that encoding='utf-8' couldn’t decode certain special characters in the file. These characters aren't compatible with the default encoding used to read the file, causing the error. To solve this problem, the latin-1 is used because continuation byte is invalid. As a result of this, I came up with the successful code. After this first successful code, I proceeded with the next guide question.
 
 #### :heavy_check_mark: How many rows and columns does the dataset contain?
-##### import pandas as pd 
-##### spotify = pd.read_csv("spotify-2023.csv", encoding='latin-1')
-##### num_rows,num_columns = spotify.shape
-##### then print.
+
+    import pandas as pd 
+    
+    spotify = pd.read_csv("spotify-2023.csv", encoding='latin-1')
+    
+    num_rows,num_columns = spotify.shape
+    
+    then print.
 ##### :pencil2: The number of rows in the dataset is: 953
 ##### :pencil2: The number of columns in the dataset is: 24
 
-#### After this first successful code, I proceeded with the next guide question.
-#### :heavy_check_mark: What are the data types of each column? Are there any missing values?
-##### data_types = spotify.dtypes
-##### print("Data types of each column:")
-##### print(data_types)
+#### :heavy_check_mark: What are the data types of each column? 
+    data_types = spotify.dtypes
+    
+    print("Data types of each column:")
+    
+    print(data_types)
 ##### :pencil2: Data types of each column:
-##### track_name              object;
-##### artist(s)_name          object;
-##### artist_count             int64;
-##### released_year            int64;
-##### released_month           int64;
-##### released_day             int64;
-##### in_spotify_playlists     int64;
-##### in_spotify_charts        int64;
-##### streams                 object;
-##### in_apple_playlists       int64;
-##### in_apple_charts          int64;
-##### in_deezer_playlists     object;
-##### in_deezer_charts         int64;
-##### in_shazam_charts        object;
-##### bpm                      int64;
-key                     object;
-mode                    object;
-danceability_%           int64;
-valence_%                int64;
-energy_%                 int64;
-acousticness_%           int64;
-instrumentalness_%       int64;
-liveness_%               int64;
-speechiness_%            int64;
-dtype: object.
+      track_name              object
+      artist(s)_name          object
+      artist_count             int64
+      released_year            int64
+      released_month           int64
+      released_day             int64
+      in_spotify_playlists     int64
+      in_spotify_charts        int64
+      streams                 object
+      in_apple_playlists       int64
+      in_apple_charts          int64
+      in_deezer_playlists     object
+      in_deezer_charts         int64
+      in_shazam_charts        object
+      bpm                      int64
+      key                     object
+      mode                    object
+      danceability_%           int64
+      valence_%                int64
+      energy_%                 int64
+      acousticness_%           int64
+      instrumentalness_%       int64
+      liveness_%               int64
+      speechiness_%            int64
+      dtype: object
+
+#### :heavy_check_mark: Are there any missing values?
+
+    missing_values = spotify.isnull().sum() 
+    
+    missing_values = missing_values[missing_values > 0] #
+    
+    print(f"Missing values in each column: \n{missing_values}")
+##### :pencil2: Missing values in each column:
+    in_shazam_charts    50
+    key                 95
+    dtype: int64
+
+### :round_pushpin: Date Continued: November 05, 2024 :mantelpiece_clock: 1:05 AM
+#### Moving on to the next guide question, the focus shifted to basic descriptive statistics. I started with calculating the mean, median, and mode, which I had practiced thoroughly in Experiments 1-2 and during a skills test retake. The coding went smoothly with no errors, so I continued to the next question on distribution by year and artist count. This part was manageable, and I decided to enhance it by adding a visualization chart using Matplotlib to better illustrate and support the answers derived from the code. In addition to this, no errors were met upon doing these two codes.
+
+#### :heavy_check_mark: What are the mean, median, and standard deviation of the streams column?
+
+    streams_mean = spotify['streams'].mean() 
+    
+    streams_median = spotify['streams'].median() 
+    
+    streams_standard_deviation = spotify['streams'].std() 
+    
+    
+    print(f"Mean of streams: {streams_mean}")
+    
+    print(f"Median of streams: {streams_median}")
+    
+    print(f"Standard deviation of streams: {streams_standard_deviation}")
+##### :pencil2: Mean of streams: 514137424.93907565
+##### :pencil2: Median of streams: 290530915.0
+##### :pencil2: Standard deviation of streams: 566856949.0388832
+
+#### :heavy_check_mark: What is the distribution of released_year and artist_count? Are there any noticable trends or outliers?
+
+    import matplotlib.pyplot as plt  
+    
+    plt.figure(figsize=(15, 10))
+    
+    plt.scatter(spotify['released_year'], spotify['artist_count'], color='#F765A3', alpha=1)
+    
+    
+    plt.title('Distribution of Released Year and Artist Count')
+    
+    plt.xlabel('Released Year')
+    
+    plt.ylabel('Number of Artist')
+    
+    plt.grid(True)
+##### :pencil2: The scatterplot as a result can be seen in my final code file. Spotify's Most Played All-Time.ipynb, Cell number 107.
 
 
 
