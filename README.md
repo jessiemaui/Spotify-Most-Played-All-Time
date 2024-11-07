@@ -31,12 +31,16 @@ Highlight elements that may help understand what makes a track popular.
 I began this exploratory project on November 4, 2024, and decided to document every error, insight, and successful code solution along the way, recording the date and time for each step. Before consolidating everything into a final file, I created this repository to narrate the journey of completing the project, offering a detailed story of the process from start to finish.
 
 ### :round_pushpin: Date Started: November 04, 2024 :mantelpiece_clock: 9:24 PM
-##### Starting on Day One! As I reviewed the instructions, I could already tell this project would be time-intensive for I am not a coding gods, just kidding! I began with an initial dataset overview, downloading and loading the CSV file into Jupyter Notebook. Recalling techniques from my work on Experiment 3 with Pandas, I gave it a shot, but quickly ran into an error that made me feel lazy in continuing the code so I tried examining wether I missed any punctuation possible but nothing really changed that'w why I closed the application and decided to continue it after my class that day which is LAVA and Elecs Physics.
+##### Starting on Day One! As I reviewed the instructions, I could already tell this project would be time-intensive for I am not a coding gods, just kidding! I began with an initial dataset overview, downloading and loading the CSV file into Jupyter Notebook. Recalling techniques from my work on Experiment 3 with Pandas, I gave it a shot, but quickly ran into an error that made me feel lazy in continuing the code so I tried examining wether I missed any punctuation possible but nothing really changed that's why I closed the application and decided to continue it after my class that day which is LAVA and Elecs Physics.
 
 ##### :triangular_flag_on_post: Error 1: Overview of Dataset 
-import pandas as pd 
-spotify = pd.read_csv('spotify-2023.csv')
-spotify['track_name']
+Errors and Realization.ipynb; Cell #2. 
+##### import pandas as pd 
+##### spotify = pd.read_csv('spotify-2023.csv')
+##### spotify['track_name']
 ###### Even though I uploaded the csv already on the same location of my errors ipynb, I could not call any track name in the spotify-2023.csv file. 
+
+### :round_pushpin: Date Started: November 05, 2024 :mantelpiece_clock: 10:45 PM
+#### 
 
 
