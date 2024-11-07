@@ -200,6 +200,8 @@ Errors and Realization.ipynb; Cell #2.
 ### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 4:30 AM
 #### After wrapping up the third bullet, I took a half-hour study break to recharge. Feeling refreshed, I decided to tackle one more bullet point since it’s my online week and I can sleep in a bit with my classes starting later in the day. After a bit of deliberation, I managed to complete a portion of the temporal trend guide question before calling it a night. I had no error in making this because this is only about making a visualization using matplotlib and a simple analysis of the graph for an explanation to the question provided.
 
+#### :heavy_check_mark: Analyze the trends in the number of tracks released over time. Plot the number of tracks released per year?
+
         import matplotlib.pyplot as plt
         
         
@@ -214,5 +216,44 @@ Errors and Realization.ipynb; Cell #2.
         plt.title('Tracks Released per Year')
         
         plt.show()
-##### :pencil2: The bar graph visualization can be found in Cell Number ___ of my "Spotify's Most Played All Time" notebook, as I wasn't able to include an image here. In summary, the top 5 Artists by Number of Tracks are: Bad Bunny that has 40 tracks, Taylor Swift that has 38 tracks, The Weeknd that has 37 tracks, SZA that has 23 tracks, and Kenrick Lamar that also has 23 tracks.
+##### :pencil2: The given graph can be seen on my notebook names "Spotify's Most Played All-Time". from 1930 to 1954, there are no tracks released.
+
+        in 1954-1958: 5 tracks released. 
+        
+        in 1958-1962: 2 tracks released.
+        
+        in 1962-1966: 3 tracks released.
+        
+        in 1966-1970: 3 tracks released.
+        
+        in 1970-1974: 2 tracks released.
+        
+        in 1974-1978: 2 tracks released.
+        
+        in 1978-1982: 3 tracks released. 
+        
+        in 1982-1986: 9 tracks released.
+        
+        in 1986-1990 there are no tracks released.
+        
+        in 1990-1994: 4 tracks released.
+        
+        in 1994-1998: 5 tracks released.
+        
+        in 1998-2002: 15 tracks released.
+        
+        in 2002-2006: 7 tracks released.
+        
+        in 2006-2010: 10 tracks released.
+        
+        in 2010-2014: 46 tracks released.
+        
+        in 2014-2018: 62 tracks released.
+        
+        in 2018-2022: 594 tracks released.
+        
+        in 2022-present: 175 track released.
+
+### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 11:08 AM
+Welcome to a new day of insights and progress in our documentation journey! 
 
