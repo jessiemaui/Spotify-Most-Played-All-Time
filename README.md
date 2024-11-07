@@ -408,7 +408,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
-##### :pencil2: The correlation between streams and bpm is -0.0024379081382717954.
+##### :pencil2: The correlation between streams and bpm is -0.0024379081382717954 which indicates a no relation.
 
 #### :two: Correlation for streams and danceability
 
@@ -427,7 +427,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
     
-##### :pencil2: The correlation between streams and danceability is -0.10545688369141913.
+##### :pencil2: The correlation between streams and danceability is -0.10545688369141913 which indicates a no relation.
 
 #### :three: Correlation for streams and energy
 
@@ -446,7 +446,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
-##### :pencil2: The correlation between streams and energy is -0.02605148836424894.
+##### :pencil2: The correlation between streams and energy is -0.02605148836424894 which indicates a no relation.
 
 #### :four: Correlation for streams and valence
 
@@ -465,7 +465,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
-##### :pencil2: The correlation between streams and valence is -0.040831367495159455
+##### :pencil2: The correlation between streams and valence is -0.040831367495159455 which indicates a no relation.
 
 #### :five: Correlation for streams and acousticness
 
@@ -484,7 +484,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
-##### :pencil2: The correlation between streams and acousticness is -0.004484652700684083.
+##### :pencil2: The correlation between streams and acousticness is -0.004484652700684083 which indicates a no relation.
 
 #### :six: Correlation for streams and instrumentalness
 
@@ -503,7 +503,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
-##### :pencil2: The correlation between streams and instrumentalness is -0.044902473175109724.
+##### :pencil2: The correlation between streams and instrumentalness is -0.044902473175109724 which indicates a no relation.
 
 #### :seven: Correlation for streams and liveness
 
@@ -522,7 +522,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
-##### :pencil2: The correlation between streams and liveness is-0.04833729577983244.
+##### :pencil2: The correlation between streams and liveness is-0.04833729577983244 which indicates a no relation.
 
 #### :eight: Correlation for streams and speechiness
 
@@ -541,7 +541,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
-##### :pencil2: The correlation between streams and speechiness is -0.1123329964033855.
+##### :pencil2: The correlation between streams and speechiness is -0.1123329964033855 which indicates a no relation.
 
 #### :heavy_check_mark: Is there a correlation between danceablity_% and energy_%? How about valence_% and acousticness_%?
 
@@ -575,5 +575,50 @@ Errors and Realization.ipynb; Cell #2.
 
     plt.show()
 
-##### :pencil2: 
+##### :pencil2: Upon seeing the graph, we had an answer for the correlation between energy percent and dance ability which is 0.19809484837625715 which indicates a WEAK relationship between the two. Moreover, the correlation between valence percent and acousticness percent is -0.08190727483082758 which indicates that these two variables have NO relationship at all.
+
+### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 11:30 PM
+#### After spending hours working through countless trials and errors—often due to minor mistakes or moments of random creativity that sometimes led to syntax errors in the "Gender and Music Characteristics" section. I eventually moved on to tackling the "Platform Popularity" section. This took a bit more time, as I initially struggled with the second question. As a result, I ended up taking several TikTok breaks to recharge. Luckily, there's no massive syntax error that deserves to be seen in my error and realizaation ipynb in this section, only with closing or opening brackets, and my biggest enemy which is capitalization and mispelling.
+
+#### :heavy_check_mark: How do numbers of tracks in spotify_playlist, spotify_charts, and apple_playlist compare?
+
+  spotify_playlists_total = spotify['in_spotify_playlists'].sum()
+  
+  spotify_charts_total = spotify['in_spotify_charts'].sum()
+  
+  apple_playlists_total = spotify['in_apple_playlists'].sum()
+  
+  
+  
+  print(f"In Spotify playlists: {spotify_playlists_total}")
+  
+  print(f"In Spotify charts: {spotify_charts_total}")
+  
+  print(f"In Apple playlists: {apple_playlists_total}")
+
+##### :pencil2: In Spotify playlists: 4955719
+##### :pencil2: In Spotify charts: 11445
+##### :pencil2: In Apple playlists: 64625
+
+#### :heavy_check_mark: Which platform seems to be favor the most popular tracks?
+
+platforms = ['Spotify Playlists', 'Spotify Charts', 'Apple Playlists']
+
+totals = [spotify_playlists_total, spotify_charts_total, apple_playlists_total]
+
+
+plt.figure(figsize=(10, 5))
+
+plt.bar(platforms, totals, color='#E5A0C6')
+
+plt.xlabel('Platform')
+
+plt.ylabel('Total Appearances')
+
+plt.title('Platform that is most used for popular tracks')
+
+plt.show()
+
+##### :pencil2: With the given graph that has visualized in the notebook, we can easily tell that the Spotify playlist is the number one for streaming the popular tracks.
+
 
