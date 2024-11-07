@@ -39,7 +39,7 @@ Errors and Realization.ipynb; Cell #2.
 ##### spotify['track_name']
 ###### Even though I uploaded the csv already on the same location of my errors ipynb, I could not call any track name in the spotify-2023.csv file. 
 
-### :round_pushpin: Date Started: November 05, 2024 :mantelpiece_clock: 10:45 PM
-#### 
+### :round_pushpin: Date Continued: November 05, 2024 :mantelpiece_clock: 10:45 PM
+#### After hours of letting procrastination take over, I finally decided it was time to get back to work.
 
 
