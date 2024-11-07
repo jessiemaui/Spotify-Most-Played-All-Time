@@ -43,6 +43,16 @@ Errors and Realization.ipynb; Cell #2.
       
 ###### Even though I uploaded the csv already on the same location of my errors ipynb, I could not call any track name in the spotify-2023.csv file. 
 
+##### :memo: Realization: Overview of Dataset
+###### UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 7250-7251: invalid continuation byte. I conducted a research for it and the encoding='ut-8' can't decode the special characters included in the file. The file contains characters that are not compatible with the default encoding that is being used to read the file.
+
+        import pandas as pd
+        
+        spotify = pd.read_csv("spotify-2023.csv", encoding='latin-1')# reading the file of spotify-2023
+        
+        print (spotify['track_name'])
+###### Upon reviewing the csv file, I realized that there are special characters. With moments of researching and experimenting I could not figure it out. But after searching, I used the Latin-1 for reading the csv file I saw in the stackoverflow method.
+
 ### :round_pushpin: Date Continued: November 05, 2024 :mantelpiece_clock: 10:45 PM
 #### After hours of letting procrastination take over, I finally decided it was time to get back to work. I researched the issue and found that encoding='utf-8' couldn’t decode certain special characters in the file. These characters aren't compatible with the default encoding used to read the file, causing the error. To solve this problem, the latin-1 is used because continuation byte is invalid. As a result of this, I came up with the successful code. After this first successful code, I proceeded with the next guide question.
 
@@ -112,23 +122,43 @@ Errors and Realization.ipynb; Cell #2.
 ### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 1:05 AM
 #### Moving on to the next guide question, the focus shifted to basic descriptive statistics. I started with calculating the mean, median, and mode, which I had practiced thoroughly in Experiments 1-2 and during a skills test retake. The coding went smoothly with no errors, so I continued to the next question on distribution by year and artist count. This part was manageable, and I decided to enhance it by adding a visualization chart using Matplotlib to better illustrate and support the answers derived from the code. In addition to this, no errors were met upon doing these two codes.
 
+##### :triangular_flag_on_post: Error 1: Basic Descriptive Statistics
+
+        streams_mean = spotify['streams'].mean() # .mean is used to get the mean.
+        
+        streams_median = spotify['streams'].median() # .median is used to get the median.
+        
+        streams_standard_deviation = spotify['streams'].std() # .std is used to get the standard deviation
+        
+        
+        print(f"Mean of streams: {streams_mean}")
+        
+        print(f"Median of streams: {streams_median}")
+        
+        print(f"Standard deviation of streams: {streams_standard_deviation}")
+        
+###### The streams canonot be processed because there is a letter inside the csv file, in the streams column.
+
 #### :heavy_check_mark: What are the mean, median, and standard deviation of the streams column?
 
-    spotify['streams'] = pd.to_numeric(spotify['streams'], errors='coerce') 
-    
-   
-    streams_mean = spotify['streams'].mean() 
-    
-    streams_median = spotify['streams'].median() 
-    
-    streams_standard_deviation = spotify['streams'].std() 
-    
-    
-    print(f"Mean of streams: {streams_mean}")
-    
-    print(f"Median of streams: {streams_median}")
-    
-    print(f"Standard deviation of streams: {streams_standard_deviation}")
+        spotify['streams'] = pd.to_numeric(spotify['streams'], errors='coerce') 
+        
+        
+        #errors='coerce' is used as a error handler wherein if the values aren't numbers, it will be ignored.
+        
+        
+        
+        streams_median = spotify['streams'].median() # .median is used to get the median.
+        
+        streams_standard_deviation = spotify['streams'].std() # .std is used to get the standard deviation
+        
+        
+        print(f"Mean of streams: {streams_mean}")
+        
+        print(f"Median of streams: {streams_median}")
+        
+        print(f"Standard deviation of streams: {streams_standard_deviation}")
+
 ##### :pencil2: Mean of streams: 514137424.93907565
 ##### :pencil2: Median of streams: 290530915.0
 ##### :pencil2: Standard deviation of streams: 566856949.0388832
@@ -149,7 +179,7 @@ Errors and Realization.ipynb; Cell #2.
     plt.ylabel('Number of Artist')
     
     plt.grid(True)
-##### :pencil2: The scatterplot as a result can be seen in my final code file. Spotify's Most Played All-Time.ipynb, Cell number ____.
+##### :pencil2: The scatterplot as a result can be seen in my final code file. Spotify's Most Played All-Time.ipynb, Cell number ____. Examining the yearly release counts provides insight into the music industry's activity levels over time. A high concentration of releases in recent years may suggest that digital platforms have made it easier for artists to distribute their music. With the use of scatter plot determines that the number of artists with multiple releases increases significantly from the 2000s with the highest count in recent year. 
 
 ### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 2:40 AM
 #### After spending a couple of hours coding for the second bullet point, I moved on to the third guide question. Surprisingly, I managed to complete it with almost no issues. While I did encounter minor errors—like a missing closing parenthesis, incorrect capitalization, and typos—they were minor enough that I didn’t add them to my ‘errors and realizations’ notebook, as they didn’t seem significant enough to document.
@@ -216,7 +246,9 @@ Errors and Realization.ipynb; Cell #2.
         plt.title('Tracks Released per Year')
         
         plt.show()
-##### :pencil2: The given graph can be seen on my notebook names "Spotify's Most Played All-Time". from 1930 to 1954, there are no tracks released.
+##### :pencil2: The given graph can be seen on my notebook names "Spotify's Most Played All-Time". 
+
+        from 1930 to 1954, there are no tracks released.
 
         in 1954-1958: 5 tracks released. 
         
@@ -255,5 +287,293 @@ Errors and Realization.ipynb; Cell #2.
         in 2022-present: 175 track released.
 
 ### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 11:08 AM
-Welcome to a new day of insights and progress in our documentation journey! 
+#### Welcome to a new day of insights and progress in our documentation journey! In this part, I continued the 4th bullet, Temporal Trends. 
+
+#### :heavy_check_mark: Does the number of tracks released per month follow any noticeable patterns? Which month sees the most releases?
+
+        monthly_counts = spotify['released_month'].value_counts().sort_index()
+        
+        
+        month = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 
+                     7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
+                     
+        
+        monthly_counts.index = monthly_counts.index.map(month)
+        
+        
+        
+        plt.figure(figsize=(15, 5))
+        
+        plt.bar(monthly_counts.index, monthly_counts.values)
+        
+        plt.xlabel('Month')
+        
+        plt.ylabel('Tracks Released')
+        
+        plt.title('Tracks Released per Month')
+        
+        plt.show()
+
+##### :pencil2: The graph is available in my notebook titled "Spotify's All-Time Most Played Tracks."
+
+    On the month of January, there's approximately 135 tracks released which is the highest among all months.
+    
+    On the month of February, there's 60 tracks relased.
+    
+    On he month of March, there's approximately 85 tracks released.
+    
+    On the month of April, there's approximately 65 tracks released.
+    
+    On the month of May, there's 130 tracks released.
+    
+    On the month of June, there's approximately 85 tracks released.
+    
+    On the month of July, there's 60 tracks released.
+    
+    On the month of August, there's approximately 50 tracks released.
+    
+    On the month of September, there's approximately 55 tracks released.
+    
+    On the month of October, there's approximately 88 tracks released.
+    
+    On the month of November, there's 80 tracks released.
+    
+    On the month of December, there's approximately 89 tracks released.
+
+### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 3:18 PM
+#### This part of the project took the most time because I struggled with how to approach the coding, especially since the CSV file lacks a 'genre' column. I thought about asking my professor if it was acceptable to modify the file, but I ultimately refrained, knowing that it wouldn't be appropriate. Additionally, when I started working on the fifth task, I encountered an error right away because I wasn’t sure which type of graph to use, especially given the reference to "correlation." After arranging the error, I immediately thought of a realization upon checking my error and analyzing the result it comes with.
+
+##### :triangular_flag_on_post: Error 1: Genres and Music Characteristics
+
+    sorted_danceability = spotify['danceability_%'].sort_values()
+    
+    sorted_energy = spotify['energy_%'].sort_values()
+    
+    dance_energy_corr = spotify['danceability_%'].corr(spotify['energy_%'])
+    
+    
+    plt.scatter(dance_energy_corr)
+    
+    plt.grid(True)
+    
+    plt.show()
+
+###### I wanted to see if the correlation could be printed in here but I had a hard time determining the y requirement for scatter plot. But instead if using scatter plot, I used the bar chart.
+
+##### :memo: Realization: Genres and Music Characteristics
+
+    unsorted_dance_energy_corr = spotify['danceability_%'].corr(spotify['energy_%'])
+    
+    unsorted_valence_acous_corr = spotify['valence_%'].corr(spotify['acousticness_%'])
+    
+    sorted_dance_energy_corr = spotify['danceability_%'].sort_values().corr(spotify['energy_%'].sort_values())
+    
+    sorted_valence_acous_corr = spotify['valence_%'].sort_values().corr(spotify['acousticness_%'].sort_values())
+    
+    
+    print(sorted_dance_energy_corr)
+    
+    print(unsorted_dance_energy_corr)
+    
+    print(sorted_valence_acous_corr)
+    
+    print(unsorted_valence_acous_corr)
+
+##### :pencil2: This is the result:
+
+    0.198094848376257
+    0.19809484837625715
+    -0.08190727483082764
+    -0.08190727483082758
+
+###### I realized that sorting the danceability and energy correlation, as well as the valence and acoustic correlation, would not change the output numbers. However, in graphs, the sorted one provides a much cleaner visualization of data.
+
+#### :heavy_check_mark: Examine the correlation between streams and musical attributes like bpm, danceability_% and energy_%. Which attributes seem to influence streams the most?
+##### This has 8 different codes that's why I separated them all for better visualization.
+
+#### :one: Correlation for streams and bpm
+
+    streams_bpm_correl = spotify['streams'].corr(spotify['bpm'])
+    
+    
+    plt.scatter(spotify['streams'],spotify['bpm'])
+    
+    plt.title(f'Streams and Bpm: (r = {streams_bpm_correl})')
+    
+    plt.xlabel('Score')
+    
+    plt.ylabel('Percentage of Bpm')
+    
+    plt.grid(True)
+    
+    plt.show()
+
+##### :pencil2: The correlation between streams and bpm is -0.0024379081382717954.
+
+#### :two: Correlation for streams and danceability
+
+    streams_danceability_correl = spotify['streams'].corr(spotify['danceability_%'])
+    
+    
+    plt.scatter(spotify['streams'], spotify['danceability_%'])
+    
+    plt.title(f'Streams and Danceability: (r = {streams_danceability_correl})')
+    
+    plt.xlabel('Streams')
+    
+    plt.ylabel('Percentage of Danceability')
+    
+    plt.grid(True)
+    
+    plt.show()
+    
+##### :pencil2: The correlation between streams and danceability is -0.10545688369141913.
+
+#### :three: Correlation for streams and energy
+
+    streams_energy_correl = spotify['streams'].corr(spotify['energy_%'])
+    
+    
+    plt.scatter(spotify['streams'], spotify['energy_%'])
+    
+    plt.title(f'Streams and Energy: (r = {streams_energy_correl})')
+    
+    plt.xlabel('Streams')
+    
+    plt.ylabel('Percentage of Energy')
+    
+    plt.grid(True)
+    
+    plt.show()
+
+##### :pencil2: The correlation between streams and energy is -0.02605148836424894.
+
+#### :four: Correlation for streams and valence
+
+    streams_valence_correl = spotify['streams'].corr(spotify['valence_%'])
+    
+    
+    plt.scatter(spotify['streams'], spotify['valence_%'])
+    
+    plt.title(f'Streams and Valence: (r = {streams_valence_correl})')
+    
+    plt.xlabel('Streams')
+    
+    plt.ylabel('Percentage of Valence')
+    
+    plt.grid(True)
+    
+    plt.show()
+
+##### :pencil2: The correlation between streams and valence is -0.040831367495159455
+
+#### :five: Correlation for streams and acousticness
+
+    streams_acousticness_correl = spotify['streams'].corr(spotify['acousticness_%'])
+    
+    
+    plt.scatter(spotify['streams'], spotify['acousticness_%'])
+    
+    plt.title(f'Streams and Acousticness: (r = {streams_acousticness_correl})')
+    
+    plt.xlabel('Streams')
+    
+    plt.ylabel('Percentage of Acousticness')
+    
+    plt.grid(True)
+    
+    plt.show()
+
+##### :pencil2: The correlation between streams and acousticness is -0.004484652700684083.
+
+#### :six: Correlation for streams and instrumentalness
+
+    streams_instrument_correl = spotify['streams'].corr(spotify['instrumentalness_%'])
+    
+    
+    plt.scatter(spotify['streams'], spotify['instrumentalness_%'])
+    
+    plt.title(f'Streams and Instrumentalness: (r = {streams_instrument_correl})')
+    
+    plt.xlabel('Streams')
+    
+    plt.ylabel('Percentage of Instrumentalness')
+    
+    plt.grid(True)
+    
+    plt.show()
+
+##### :pencil2: The correlation between streams and instrumentalness is -0.044902473175109724.
+
+#### :seven: Correlation for streams and liveness
+
+    streams_liveness_correl = spotify['streams'].corr(spotify['liveness_%'])
+    
+    
+    plt.scatter(spotify['streams'], spotify['liveness_%'])
+    
+    plt.title(f'Streams and Liveness: (r = {streams_liveness_correl})')
+    
+    plt.xlabel('Streams')
+    
+    plt.ylabel('Percentage of Liveness')
+    
+    plt.grid(True)
+    
+    plt.show()
+
+##### :pencil2: The correlation between streams and liveness is-0.04833729577983244.
+
+#### :eight: Correlation for streams and speechiness
+
+    streams_speechiness_correl = spotify['streams'].corr(spotify['speechiness_%'])
+    
+    
+    plt.scatter(spotify['streams'], spotify['speechiness_%'])
+    
+    plt.title(f'Streams and Speechiness: (r = {streams_speechiness_correl})')
+    
+    plt.xlabel('Streams')
+    
+    plt.ylabel('Percentage of Speechiness')
+    
+    plt.grid(True)
+    
+    plt.show()
+
+##### :pencil2: The correlation between streams and speechiness is -0.1123329964033855.
+
+#### :heavy_check_mark: Is there a correlation between danceablity_% and energy_%? How about valence_% and acousticness_%?
+
+dance_energy_correl = spotify['danceability_%'].corr(spotify['energy_%']) 
+
+valence_acous_correl =spotify['valence_%'].corr(spotify['acousticness_%']) 
+
+
+plt.scatter(spotify['danceability_%'],spotify['energy_%'])
+
+plt.title(f'Danceability and Energy: (r = {dance_energy_correl})')
+
+plt.xlabel('Percentage of Dance Ability')
+
+plt.ylabel('Percentage of Energy Perceived')
+
+plt.grid(True)
+
+plt.show()
+
+
+plt.scatter(spotify['valence_%'], spotify['acousticness_%']) # Sorted_valence is in the x-axis and the sorted_acousticness is in the y-axis
+
+plt.title(f'Valence and Acousticness Correlation: (r={valence_acous_correl})')
+
+plt.xlabel('Percentage of Valence')
+
+plt.ylabel('Percentage of Acousticness')
+
+plt.grid(True)
+
+plt.show()
+
+##### :pencil2: 
 
