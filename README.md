@@ -48,13 +48,19 @@ Errors and Realization.ipynb; Cell #2.
 
 #### :heavy_check_mark: How many rows and columns does the dataset contain?
 
-    import pandas as pd 
-    
-    spotify = pd.read_csv("spotify-2023.csv", encoding='latin-1')
-    
-    num_rows,num_columns = spotify.shape
-    
-    then print.
+        import pandas as pd 
+        
+        pd.set_option('display.max_rows', None) 
+        
+        spotify = pd.read_csv("spotify-2023.csv", encoding='latin-1')
+        
+        
+        num_rows,num_columns = spotify.shape # to get the number of rows and columns in the csv file
+        
+        print(f'The number of rows in the dataset is: {num_rows}') # total number of rows
+        
+        print(f'The number of columns in the dataset is: {num_columns}') # total number of columns
+
 ##### :pencil2: The number of rows in the dataset is: 953
 ##### :pencil2: The number of columns in the dataset is: 24
 
@@ -103,11 +109,14 @@ Errors and Realization.ipynb; Cell #2.
     key                 95
     dtype: int64
 
-### :round_pushpin: Date Continued: November 05, 2024 :mantelpiece_clock: 1:05 AM
+### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 1:05 AM
 #### Moving on to the next guide question, the focus shifted to basic descriptive statistics. I started with calculating the mean, median, and mode, which I had practiced thoroughly in Experiments 1-2 and during a skills test retake. The coding went smoothly with no errors, so I continued to the next question on distribution by year and artist count. This part was manageable, and I decided to enhance it by adding a visualization chart using Matplotlib to better illustrate and support the answers derived from the code. In addition to this, no errors were met upon doing these two codes.
 
 #### :heavy_check_mark: What are the mean, median, and standard deviation of the streams column?
 
+    spotify['streams'] = pd.to_numeric(spotify['streams'], errors='coerce') 
+    
+   
     streams_mean = spotify['streams'].mean() 
     
     streams_median = spotify['streams'].median() 
@@ -140,11 +149,70 @@ Errors and Realization.ipynb; Cell #2.
     plt.ylabel('Number of Artist')
     
     plt.grid(True)
-##### :pencil2: The scatterplot as a result can be seen in my final code file. Spotify's Most Played All-Time.ipynb, Cell number 107.
+##### :pencil2: The scatterplot as a result can be seen in my final code file. Spotify's Most Played All-Time.ipynb, Cell number ____.
 
+### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 2:40 AM
+#### After spending a couple of hours coding for the second bullet point, I moved on to the third guide question. Surprisingly, I managed to complete it with almost no issues. While I did encounter minor errors—like a missing closing parenthesis, incorrect capitalization, and typos—they were minor enough that I didn’t add them to my ‘errors and realizations’ notebook, as they didn’t seem significant enough to document.
 
+#### :heavy_check_mark: Which track has the highest number of streams? Display the top 5 most streamed track?
 
+        import matplotlib.pyplot as plt
+        
+        top_tracks = spotify.nlargest(5, 'streams')[['track_name', 'streams']]
+        
+        
+        plt.figure(figsize=(15,5))
+        
+        plt.bar(top_tracks['track_name'], top_tracks['streams'], color='#E27BB1')
+        
+        plt.xlabel("Track Name")
+        
+        plt.ylabel("Streams")
+        
+        plt.title("Top 5 Most Streamed Track", fontsize=15)
+        
+        plt.show()
+##### :pencil2: You can view the bar graph visualization in my "Spotify's Most Played All Time" notebook Cell Number _______, as I couldn’t include an image here. In summary, the track with the highest number of streams is Blinding Lights, with the top five most-streamed tracks being Blinding Lights, Shape of You, Someone You Loved, Dance Monkey, and Sunflower from Spider-Man: Into the Spider-Verse.
 
+#### :heavy_check_mark: Who are the top 5 most frequent artists based on the number of tracks in the dataset?
 
+        import matplotlib.pyplot as plt
+        
+        artist_counts = spotify['artist(s)_name'].str.split(', ').explode().value_counts() 
+        
+        
+        top_artists = artist_counts.nlargest(5) #.nlargest is used to get the highest number of frequent artist
+        
+        
+        plt.figure(figsize=(10, 5))
+        
+        plt.bar(top_artists.index, top_artists.values, color='#E5A0C6')
+        
+        plt.xlabel("Artist Name")
+        
+        plt.ylabel("Number of Tracks")
+        
+        plt.title("Top 5 Artists by Number of Tracks", fontsize=15)
+        
+        plt.show()
+##### :pencil2: The bar graph visualization can be found in Cell Number ___ of my "Spotify's Most Played All Time" notebook, as I wasn't able to include an image here. In summary, the top 5 Artists by Number of Tracks are: Bad Bunny that has 40 tracks, Taylor Swift that has 38 tracks, The Weeknd that has 37 tracks, SZA that has 23 tracks, and Kenrick Lamar that also has 23 tracks.
 
+### :round_pushpin: Date Continued: November 06, 2024 :mantelpiece_clock: 4:30 AM
+#### After wrapping up the third bullet, I took a half-hour study break to recharge. Feeling refreshed, I decided to tackle one more bullet point since it’s my online week and I can sleep in a bit with my classes starting later in the day. After a bit of deliberation, I managed to complete a portion of the temporal trend guide question before calling it a night. I had no error in making this because this is only about making a visualization using matplotlib and a simple analysis of the graph for an explanation to the question provided.
+
+        import matplotlib.pyplot as plt
+        
+        
+        plt.figure(figsize=(15, 5))
+        
+        plt.hist(spotify['released_year'], bins=50)
+        
+        plt.xlabel('Year')
+        
+        plt.ylabel('Tracks Released')
+        
+        plt.title('Tracks Released per Year')
+        
+        plt.show()
+##### :pencil2: The bar graph visualization can be found in Cell Number ___ of my "Spotify's Most Played All Time" notebook, as I wasn't able to include an image here. In summary, the top 5 Artists by Number of Tracks are: Bad Bunny that has 40 tracks, Taylor Swift that has 38 tracks, The Weeknd that has 37 tracks, SZA that has 23 tracks, and Kenrick Lamar that also has 23 tracks.
 
