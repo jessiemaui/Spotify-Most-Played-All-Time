@@ -5,24 +5,24 @@ The idea behind the "For You" title is to create a space where people can reconn
 
 #### :warning: Here are the General Objectives that I want to meet as we dive into our Spotify Playlist Exploration.
 ##### :thought_balloon: Examine the dataset's structure.
-To understand its layout, noting any missing values and checking data types. 
-This will give an initial sense of the variables available.
+    To understand its layout, noting any missing values and checking data types. 
+    This will give an initial sense of the variables available.
 
 ##### :thought_balloon: Provide Summary Statistics.
-Like the number of streams, release dates, and musical attributes 
-(e.g., BPM, danceability) to provide an overview of the data.
+    Like the number of streams, release dates, and musical attributes 
+    (e.g., BPM, danceability) to provide an overview of the data.
 
 ##### :thought_balloon: Uses Visualizations.
-Such as bar charts, histograms, and scatter plots to identify 
-trends and patterns. Ensure that each chart is clearly labeled for easy interpretation.
+    Such as bar charts, histograms, and scatter plots to identify 
+    trends and patterns. Ensure that each chart is clearly labeled for easy interpretation.
 
 ##### :thought_balloon: Analyze Correlations.
-To reveal relationships between different features. Look into connections between 
-streams and musical characteristics like tempo, energy, or playlist presence.
+    To reveal relationships between different features. Look into connections between 
+    streams and musical characteristics like tempo, energy, or playlist presence.
 
 ##### :thought_balloon: Draw Insights and Make Recommendations.
-Based on your analysis regarding tracks, artists, or music trends. 
-Highlight elements that may help understand what makes a track popular.
+    Based on your analysis regarding tracks, artists, or music trends. 
+    Highlight elements that may help understand what makes a track popular.
 
 ### :envelope_with_arrow: Documentation
 ##### I've documented the step-by-step process I made in building our new playlist for the year based on genres, moods, and popular patterns. I took into consideration my milestones, realizations, errors encountered, metholodigies in comments within my code, and my successful code with respect to our objectives. Moreover, you'll be seeing my pre-made visualization, and thought processes that shapes this journey from data to discovery.
@@ -582,19 +582,18 @@ Errors and Realization.ipynb; Cell #2.
 
 #### :heavy_check_mark: How do numbers of tracks in spotify_playlist, spotify_charts, and apple_playlist compare?
 
-  spotify_playlists_total = spotify['in_spotify_playlists'].sum()
-  
-  spotify_charts_total = spotify['in_spotify_charts'].sum()
-  
-  apple_playlists_total = spotify['in_apple_playlists'].sum()
-  
-  
-  
-  print(f"In Spotify playlists: {spotify_playlists_total}")
-  
-  print(f"In Spotify charts: {spotify_charts_total}")
-  
-  print(f"In Apple playlists: {apple_playlists_total}")
+    spotify_playlists_total = spotify['in_spotify_playlists'].sum()
+      
+    spotify_charts_total = spotify['in_spotify_charts'].sum()
+      
+    apple_playlists_total = spotify['in_apple_playlists'].sum()
+      
+        
+    print(f"In Spotify playlists: {spotify_playlists_total}")
+      
+    print(f"In Spotify charts: {spotify_charts_total}")
+      
+    print(f"In Apple playlists: {apple_playlists_total}")
 
 ##### :pencil2: In Spotify playlists: 4955719
 ##### :pencil2: In Spotify charts: 11445
@@ -602,22 +601,22 @@ Errors and Realization.ipynb; Cell #2.
 
 #### :heavy_check_mark: Which platform seems to be favor the most popular tracks?
 
-platforms = ['Spotify Playlists', 'Spotify Charts', 'Apple Playlists']
-
-totals = [spotify_playlists_total, spotify_charts_total, apple_playlists_total]
-
-
-plt.figure(figsize=(10, 5))
-
-plt.bar(platforms, totals, color='#E5A0C6')
-
-plt.xlabel('Platform')
-
-plt.ylabel('Total Appearances')
-
-plt.title('Platform that is most used for popular tracks')
-
-plt.show()
+    platforms = ['Spotify Playlists', 'Spotify Charts', 'Apple Playlists']
+    
+    totals = [spotify_playlists_total, spotify_charts_total, apple_playlists_total]
+    
+    
+    plt.figure(figsize=(10, 5))
+    
+    plt.bar(platforms, totals, color='#E5A0C6')
+    
+    plt.xlabel('Platform')
+    
+    plt.ylabel('Total Appearances')
+    
+    plt.title('Platform that is most used for popular tracks')
+    
+    plt.show()
 
 ##### :pencil2: With the given graph that has visualized in the notebook, we can easily tell that the Spotify playlist is the number one for streaming the popular tracks.
 
