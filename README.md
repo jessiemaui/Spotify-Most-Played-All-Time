@@ -573,7 +573,7 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.grid(True)
 
-plt.show()
+    plt.show()
 
 ##### :pencil2: 
 
