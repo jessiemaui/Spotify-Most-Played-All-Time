@@ -34,12 +34,26 @@ I began this exploratory project on November 4, 2024, and decided to document ev
 
 ##### :triangular_flag_on_post: Error 1: Overview of Dataset 
 Errors and Realization.ipynb; Cell #2. 
-##### import pandas as pd 
-##### spotify = pd.read_csv('spotify-2023.csv')
-##### spotify['track_name']
+###### import pandas as pd 
+###### spotify = pd.read_csv('spotify-2023.csv')
+###### spotify['track_name']
 ###### Even though I uploaded the csv already on the same location of my errors ipynb, I could not call any track name in the spotify-2023.csv file. 
 
 ### :round_pushpin: Date Continued: November 05, 2024 :mantelpiece_clock: 10:45 PM
-#### After hours of letting procrastination take over, I finally decided it was time to get back to work.
+#### After hours of letting procrastination take over, I finally decided it was time to get back to work. I researched the issue and found that encoding='utf-8' couldn’t decode certain special characters in the file. These characters aren't compatible with the default encoding used to read the file, causing the error. To solve this problem, the latin-1 is used because continuation byte is invalid. As a result of this, I came up with the successful code:
+
+#### :heavy_check_mark: How many rows and columns does the dataset contain?
+##### import pandas as pd 
+##### spotify = pd.read_csv("spotify-2023.csv", encoding='latin-1')
+##### num_rows,num_columns = spotify.shape
+##### then print.
+
+#### After this first successful code, I proceeded with the next guide question.
+#### :heavy_check_mark: What are the data types of each column? Are there any missing values?
+##### data_types = spotify.dtypes
+##### print("Data types of each column:")
+##### print(data_types)
+
+
 
 
