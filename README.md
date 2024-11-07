@@ -545,33 +545,33 @@ Errors and Realization.ipynb; Cell #2.
 
 #### :heavy_check_mark: Is there a correlation between danceablity_% and energy_%? How about valence_% and acousticness_%?
 
-dance_energy_correl = spotify['danceability_%'].corr(spotify['energy_%']) 
-
-valence_acous_correl =spotify['valence_%'].corr(spotify['acousticness_%']) 
-
-
-plt.scatter(spotify['danceability_%'],spotify['energy_%'])
-
-plt.title(f'Danceability and Energy: (r = {dance_energy_correl})')
-
-plt.xlabel('Percentage of Dance Ability')
-
-plt.ylabel('Percentage of Energy Perceived')
-
-plt.grid(True)
-
-plt.show()
-
-
-plt.scatter(spotify['valence_%'], spotify['acousticness_%']) # Sorted_valence is in the x-axis and the sorted_acousticness is in the y-axis
-
-plt.title(f'Valence and Acousticness Correlation: (r={valence_acous_correl})')
-
-plt.xlabel('Percentage of Valence')
-
-plt.ylabel('Percentage of Acousticness')
-
-plt.grid(True)
+    dance_energy_correl = spotify['danceability_%'].corr(spotify['energy_%']) 
+    
+    valence_acous_correl =spotify['valence_%'].corr(spotify['acousticness_%']) 
+    
+    
+    plt.scatter(spotify['danceability_%'],spotify['energy_%'])
+    
+    plt.title(f'Danceability and Energy: (r = {dance_energy_correl})')
+    
+    plt.xlabel('Percentage of Dance Ability')
+    
+    plt.ylabel('Percentage of Energy Perceived')
+    
+    plt.grid(True)
+    
+    plt.show()
+    
+    
+    plt.scatter(spotify['valence_%'], spotify['acousticness_%']) # Sorted_valence is in the x-axis and the sorted_acousticness is in the y-axis
+    
+    plt.title(f'Valence and Acousticness Correlation: (r={valence_acous_correl})')
+    
+    plt.xlabel('Percentage of Valence')
+    
+    plt.ylabel('Percentage of Acousticness')
+    
+    plt.grid(True)
 
 plt.show()
 
