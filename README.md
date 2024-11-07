@@ -47,12 +47,43 @@ Errors and Realization.ipynb; Cell #2.
 ##### spotify = pd.read_csv("spotify-2023.csv", encoding='latin-1')
 ##### num_rows,num_columns = spotify.shape
 ##### then print.
+##### :pencil2: The number of rows in the dataset is: 953
+##### :pencil2: The number of columns in the dataset is: 24
 
 #### After this first successful code, I proceeded with the next guide question.
 #### :heavy_check_mark: What are the data types of each column? Are there any missing values?
 ##### data_types = spotify.dtypes
 ##### print("Data types of each column:")
 ##### print(data_types)
+##### :pencil2: Data types of each column:
+##### track_name              object;
+##### artist(s)_name          object;
+##### artist_count             int64;
+##### released_year            int64;
+##### released_month           int64;
+##### released_day             int64;
+##### in_spotify_playlists     int64;
+##### in_spotify_charts        int64;
+##### streams                 object;
+##### in_apple_playlists       int64;
+##### in_apple_charts          int64;
+##### in_deezer_playlists     object;
+##### in_deezer_charts         int64;
+##### in_shazam_charts        object;
+##### bpm                      int64;
+key                     object;
+mode                    object;
+danceability_%           int64;
+valence_%                int64;
+energy_%                 int64;
+acousticness_%           int64;
+instrumentalness_%       int64;
+liveness_%               int64;
+speechiness_%            int64;
+dtype: object.
+
+
+
 
 
 
