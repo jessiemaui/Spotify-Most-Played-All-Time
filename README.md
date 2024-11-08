@@ -707,9 +707,10 @@ Errors and Realization.ipynb; Cell #2.
     plt.ylabel('Average Streams\n')
     
     plt.show()
+    
+##### :pencil2: 
 
-
-
+### :round_pushpin: Date Continued: November 07, 2024 :mantelpiece_clock: 7:30 PM
 #### :heavy_check_mark: Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
 
     import pandas as pd
@@ -750,10 +751,16 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
+##### :pencil2: 
 
 
 
 
+### :round_pushpin: Date Ended: November 08, 2024 :mantelpiece_clock: 11:40 PM
+####
+
+
+# :speech_balloon: Conclusion
 
 
 
