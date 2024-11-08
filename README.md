@@ -620,6 +620,56 @@ Errors and Realization.ipynb; Cell #2.
 
 ##### :pencil2: With the given graph that has visualized in the notebook, we can easily tell that the Spotify playlist is the number one for streaming the popular tracks.
 
-### :round_pushpin: Date Continued: November 07, 2024 :mantelpiece_clock: 
+### :round_pushpin: Date Continued: November 07, 2024 :mantelpiece_clock: 10:40 AM
+#### It took me quite a while to finish the last task because I burned out while working on the "Genres and Music Characteristics" section. I ended up continuing the work the next morning, pushing through with a tired mind. To make sure I approached the next part effectively, I decided to do some research for inspiration. However, I didn't want to rely only on external sources, so I also reached out to a few friends who’ve taken IT courses for their recommendations on how to tackle this section. Unfortunately, they weren't very experienced with graphing in Python. I tried diving into the last part for my first try but I had errors prior in coding.
+
+##### :triangular_flag_on_post: Error 1: Advanced Analaysis
+
+        import pandas as pd
+        
+        playlist_chart= ['in_spotify_playlists', 'in_spotify_charts', 
+        
+                          'in_apple_playlists', 'in_apple_charts', 
+                          
+                          'in_deezer_playlists', 'in_deezer_charts', 
+                          
+                          'in_shazam_charts']
+                          
+        
+        spotify[playlist_chart] = pd.to_numeric(spotify[playlist_chart])
+        
+        print(spotify[playlist_chart])
+        
+###### pd.numeric is only applicable in single column only. In my case playlist_chart, I am trying to use it in multiple columns that is why it does not work.I need to put it in a listing process first and apply pd.numeric
+
+##### :triangular_flag_on_post: Error 2: Advanced Analaysis
+
+        import pandas as pd
+        
+        
+        playlist_chart= ['in_spotify_playlists', 'in_spotify_charts', 
+        
+                          'in_apple_playlists', 'in_apple_charts', 
+                          
+                          'in_deezer_playlists', 'in_deezer_charts', 
+                          
+                          'in_shazam_charts']
+                          
+        
+        
+        spotify[playlist_chart] = spotify[playlist_chart].apply(pd.to_numeric, errors='coerce')
+        
+        print(spotify[playlist_chart])
+
+###### I encountered another error due to not applying the error handler in playlist_chart. Error occured: File lib.pyx:2391, in pandas._libs.lib.maybe_convert_numeric() ValueError: Unable to parse string "2,445"
+
+
+
+
+
+
+
+
+
 
 
