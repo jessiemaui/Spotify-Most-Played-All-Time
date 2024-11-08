@@ -620,4 +620,6 @@ Errors and Realization.ipynb; Cell #2.
 
 ##### :pencil2: With the given graph that has visualized in the notebook, we can easily tell that the Spotify playlist is the number one for streaming the popular tracks.
 
+### :round_pushpin: Date Continued: November 07, 2024 :mantelpiece_clock: 
+
 
