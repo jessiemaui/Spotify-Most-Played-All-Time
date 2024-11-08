@@ -693,6 +693,62 @@ Errors and Realization.ipynb; Cell #2.
 
 #### :heavy_check_mark: Based on the streams data, can you identify any patterns among tracks with the same key or mode (Major vs. Minor)?
 
+    import matplotlib.pyplot as plt
+    
+    
+    plt.figure(figsize=(12, 6))
+    
+    plt.bar(spotify['mode'], spotify['streams'])
+    
+    plt.title('Major vs. Minor')
+    
+    plt.xlabel('Mode')
+    
+    plt.ylabel('Average Streams\n')
+    
+    plt.show()
+
+
+
+#### :heavy_check_mark: Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
+
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    
+    
+    playlist_chart= ['in_spotify_playlists', 'in_spotify_charts', 
+    
+                      'in_apple_playlists', 'in_apple_charts', 
+                      
+                      'in_deezer_playlists', 'in_deezer_charts', 
+                      
+                      'in_shazam_charts']
+    
+    
+    spotify[playlist_chart] = spotify[playlist_chart].apply(pd.to_numeric, errors='coerce')
+    
+    
+    artist_totals = spotify.groupby('artist(s)_name')[playlist_chart].sum()
+    
+    
+    artist_totals['Total_Appearances'] = artist_totals.sum(axis=1)
+    
+    
+    top10_artist = artist_totals.nlargest(10, 'Total_Appearances')
+    
+    
+    
+    plt.figure(figsize=(14, 8))
+    
+    plt.bar(top10_artist.index, top10_artist['Total_Appearances'], color='#E5A0C6')
+    
+    plt.xlabel("Artist")
+    
+    plt.ylabel("Total Appearances")
+    
+    plt.title("The Total Appearances of top 10 artist")
+    
+    plt.show()
 
 
 
