@@ -663,6 +663,38 @@ Errors and Realization.ipynb; Cell #2.
 
 ###### I encountered another error due to not applying the error handler in playlist_chart. Error occured: File lib.pyx:2391, in pandas._libs.lib.maybe_convert_numeric() ValueError: Unable to parse string "2,445"
 
+### :round_pushpin: Date Continued: November 07, 2024 :mantelpiece_clock: 3:38 PM
+#### With so much going on in my mind as I tried to work through this part, I took advantage of some free time during class to continue coding. This time, I encountered a mix of errors and realizations before finally arriving at the correct solution.
+
+##### :memo: Realization: Advanced Analysis
+
+        import pandas as pd
+        
+        playlist_chart= ['in_spotify_playlists', 'in_spotify_charts', 
+        
+                          'in_apple_playlists', 'in_apple_charts', 
+                          
+                          'in_deezer_playlists', 'in_deezer_charts', 
+                          
+                          'in_shazam_charts']
+        
+                          
+        spotify[playlist_chart] = spotify[playlist_chart].apply(pd.to_numeric)
+        
+        
+        
+        artist_totals = spotify.groupby('artist(s)_name')[playlist_chart].sum()
+        
+        
+        
+        artist_totals['Total_Appearances'] = artist_totals.sum(axis=0)
+
+###### if I used axis=0 the display in the bar would be none because axis 0 refers in the columns.
+
+#### :heavy_check_mark: Based on the streams data, can you identify any patterns among tracks with the same key or mode (Major vs. Minor)?
+
+
+
 
 
 
