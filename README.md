@@ -708,12 +708,13 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
     
-##### :pencil2: 
+##### :pencil2: The total major is 550 and the total minor is 403. The y-axis values is in scientific notation and expressed in E+11 except for 0.5 which makes it easier to read for the average streams.
 
 ### :round_pushpin: Date Continued: November 07, 2024 :mantelpiece_clock: 7:30 PM
 #### :heavy_check_mark: Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
 
     import pandas as pd
+    
     import matplotlib.pyplot as plt
     
     
@@ -751,16 +752,94 @@ Errors and Realization.ipynb; Cell #2.
     
     plt.show()
 
-##### :pencil2: 
+##### :pencil2: The result is:  
+
+                            
+    artist(s)_name            in spotify playlists     in spotify charts 
+    
+    The Weeknd                         144053                180   
+    
+    Taylor Swift                       132974                542  
+    
+    Ed Sheeran                         128758                 94  
+    
+    Harry Styles                       110026                185   
+    
+    Eminem                              87331                152   
+    
+    Arctic Monkeys                      84016                190   
+    
+    Coldplay                            75716                 72   
+    
+    Avicii                              68241                 42   
+    
+    Adele                               65049                 69   
+    
+    Dr. Dre, Snoop Dogg                 65728                  0   
+    
+    
+    
+                         in apple playlists        in apple charts    in deezer playlists  
+                         
+    artist(s)_name                                                                  
+    
+    The Weeknd                         1677             1348               2138.0   
+    
+    Taylor Swift                       1796             1866               1708.0   
+    
+    Ed Sheeran                         1448              488               1702.0   
+    
+    Harry Styles                       1741              545               2483.0   
+    
+    Eminem                              475              281                  0.0   
+    
+    Arctic Monkeys                      241              340               1170.0   
+    Coldplay                            381               25                805.0   
+    
+    Avicii                              407              282                  0.0   
+    
+    Adele                               646              331                856.0   
+    
+    Dr. Dre, Snoop Dogg                 283              118                  0.0   
+    
+    
+    
+                         in deezer charts       in shazam charts    Total Appearances  
+                         
+    artist(s)_name                                                              
+    
+    The Weeknd                         23             854.0           150273.0  
+    
+    Taylor Swift                       58            1811.0           140755.0  
+    
+    Ed Sheeran                         43             874.0           133407.0  
+    
+    Harry Styles                       76             282.0           115338.0  
+    
+    Eminem                             12             272.0            88523.0  
+    
+    Arctic Monkeys                      6             101.0            86064.0  
+    
+    Coldplay                           10               0.0            77009.0  
+    
+    Avicii                              1             101.0            69074.0  
+    
+    Adele                              29             606.0            67586.0  
+    
+    Dr. Dre, Snoop Dogg                 2             953.0            67084.0  
 
 
 
-
-### :round_pushpin: Date Ended: November 08, 2024 :mantelpiece_clock: 11:40 PM
-####
-
+### :white_flag: Date Ended: November 09, 2024 :mantelpiece_clock: 12:04 PM
+#### On November 8, I attended to family errands, which briefly delayed my work on the final parts of my GitHub project. I made minor adjustments to ensure the code was consistently color-coordinated up to the last cell. Today, November 9, I completed the final touches on my 'Errors and Realization' and 'Spotify's Most Played All-Time' notebooks, refining and updating the README to ensure everything is ready for submission, checked thoroughly, and prepared with attention to detail.
 
 # :speech_balloon: Conclusion
+#### This analysis provided a well-rounded perspective on track popularity, emphasizing that musical characteristics, release timing, and platform visibility work together to shape streaming success. These findings equip music industry stakeholders with valuable insights, enabling artists, producers, and platforms to create data-driven strategies that enhance content appeal and better connect with listeners.
+
+# :eye_speech_bubble: Thanks for taking the time to explore this project! Every insight and suggestion you share adds real value, helping me refine and expand on these ideas. Here's to finishing another meaningful project! I honestly hope all my codes and its products makes sense, and this project may help you in making your new playlist according to what's shown in everything from their popularity up to the artist you love to see on top to be still updated on what's popular to gen-z's and to gen-z alpha's era today!
+
+# Built with passion, persistence, and a bit of coffee—thanks for being part of this adventure! 'Til next time, programming-mate. :hearts:
+
 
 
 
